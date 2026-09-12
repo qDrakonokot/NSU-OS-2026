@@ -14,11 +14,11 @@ int main () {
     if (file == NULL) {
         perror("Failed to open file for the first time");
     } else {
-        printf("Succesfull opened file\n");
+        printf("Successfully opened file\n");
         fclose(file);
     }
     
-    int ret_c = setuid(uid); //set up EIUD equals to UID 
+    int ret_c = setuid(uid); // Drop effective UID (EUID) to real UID (RUID).
     if (ret_c != 0) {
         perror("failed to set EUID");
         return 1;
@@ -33,7 +33,7 @@ int main () {
     if (file == NULL) {
         perror("Failed to open file for the second time");
     } else {
-        printf("Succesfull opened file\n");
+        printf("Successfully opened file\n");
         fclose(file);
     }
 
