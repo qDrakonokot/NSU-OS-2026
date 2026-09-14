@@ -7,8 +7,8 @@
 int main () {
     uid_t uid = getuid();
     uid_t euid = geteuid();
-    printf("UID: %u\n", (unsigned int)uid);
-    printf("EUID: %u\n", (unsigned int)euid);
+    printf("UID: %ld\n", (long)uid);
+    printf("EUID: %ld\n", (long)euid);
 
     FILE* file = fopen("file", "r");
     if (file == NULL) {
@@ -26,8 +26,8 @@ int main () {
 
     uid = getuid();
     euid = geteuid();
-    printf("UID: %u\n", (unsigned int)uid);
-    printf("EUID: %u\n", (unsigned int)euid);
+    printf("UID: %ld\n", (long)uid);
+    printf("EUID: %ld\n", (long)euid);
 
     file = fopen("file", "r");
     if (file == NULL) {
