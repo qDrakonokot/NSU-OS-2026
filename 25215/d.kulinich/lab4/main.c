@@ -36,7 +36,7 @@ int main(void) {
             goto cleanup; 
         }
 
-        new_node->data = (char *)malloc(len + 1);
+        new_node->data = (char *)malloc(sizeof(char) * (len + 1));
         if (new_node->data == NULL) {
             perror("Error: string malloc failed");
             free(new_node);
